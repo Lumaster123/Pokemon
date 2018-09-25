@@ -1,25 +1,38 @@
 package pokemon.pokemon;
 
+import java.util.ArrayList;
+import pokemon.AttackMoves.BaseAttackMove;
 
+public class BasePokemon{
 
     protected BaseAttackMove[] attackMoves;
     
+    protected ElementType[] elementTypes;
     
     public BasePokemon(){
         attackMoves = new BaseAttackMove[4];
+        elementTypes = new ElementType[2];
     }
     
     
     public void adjustHealth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public boolean isAlive() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     public void attack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+
+    public ElementType[] getElementTypes() {
+        return elementTypes;
+    }
+    
+    public ElementType getElementType(int index){
+        return elementTypes[index];
     }
     
 }
