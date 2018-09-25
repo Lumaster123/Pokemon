@@ -10,7 +10,7 @@ public class Pokemon {
         Initializer init = new Initializer();
         
         init.initializeWindow(new Window(Window.Window_Size.FULL_SIZE, "Pokemon", null));
-        //hoi schotz
+      
     }
     
 }
