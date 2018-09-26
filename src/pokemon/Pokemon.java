@@ -27,8 +27,8 @@ public class Pokemon {
         
         box.update();
         
-        box.setText("Hello World!");
-        Time.sleep(5 * 1000);
+        box.setText("Hello World! ");
+        Time.sleep(2 * 1000);
         box.writeText(TextBox.TEXT_SPEED_FAST);
         
         init.printInitializationDuration();
