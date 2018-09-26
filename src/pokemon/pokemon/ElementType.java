@@ -2,21 +2,23 @@ package pokemon.pokemon;
 
 public enum ElementType {
     
-    STEEL   ,
-    DARK    ,
-    DRAGON  ,
-    GHOST   ,
-    ROCK    ,
-    BUG     ,
-    PSYCHIC ,
-    FLYING  ,
-    GROUND  ,
-    POISON  ,
-    FIGHT   ,
-    ICE     ,
-    GRASS   ,
-    ELECTRO ,
-    WATER   ,
-    FIRE    ;
+        NORMAL  ,
+        FIGHT   ,
+        FLYING  ,
+        POISON  ,
+        GROUND  ,
+        ROCK    ,
+        BUG     ,
+        GHOST   ,
+        STEEL   ,
+        FIRE    ,
+        WATER   ,
+        GRASS   ,
+        ELECTRO  ,
+        PSYCHIC ,
+        ICE     ,
+        DRAGON  ,
+        DARK    ,
+        FAIRY   ;
 
 }
