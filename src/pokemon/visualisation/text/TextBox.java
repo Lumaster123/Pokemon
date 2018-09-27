@@ -199,7 +199,7 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
 
     @Override
     public void keyChanged(int keyCode, boolean keyState) {
-        if (keyCode == Controls.KEY_A && keyState == false) {
+        if (keyCode == Controls.KEY_A && keyState == false && displayForwardSymbol) {
             pressedForward = true;
         }
     }
