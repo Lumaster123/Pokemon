@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/resources/images/icon/ultraball.png</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/AttackMoves/BaseAttackMove.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/pokemon/ElementType.java</file>
+            <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/world/ChunkLoader.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/pokemon/BasePokemon.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/pokemon/PokemonCreator.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/data/TypeEfficiency.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/Pokemon.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/data/StoryData.java</file>
+            <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/visualisation/text/TextBox.java</file>
             <file>file:/C:/Users/Robert/Documents/GitHub/Pokemon/src/pokemon/data/ExsistentPokemonData.java</file>
         </group>
     </open-files>

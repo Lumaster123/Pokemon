@@ -25,6 +25,10 @@ public class BaseAttackMove {
         return attackAP;
     }
 
+    public void setMaxAttackAP(int maxAttackAP) {
+        this.maxAttackAP = maxAttackAP;
+    }
+
     public void setAttackAP(int attackAP) {
         this.attackAP = attackAP;
     }

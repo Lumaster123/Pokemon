@@ -27,9 +27,11 @@ public class Pokemon {
         
         box.update();
         
-        box.setText("Hello World! ");
+        box.setText("Hello World! how are you today my friend dddddddddddd <br> dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
         Time.sleep(2 * 1000);
-        box.writeText(TextBox.TEXT_SPEED_FAST);
+        box.writeText(TextBox.TEXT_SPEED_FASTEST);
+        
+        System.out.println(box.getTextWidth() + " " + box.getTextHeight());
         
         init.printInitializationDuration();
         
