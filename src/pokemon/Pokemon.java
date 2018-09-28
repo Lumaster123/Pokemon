@@ -32,10 +32,10 @@ public class Pokemon {
         
         box.update();
         
-        box.setText("Hello World! how are you today my friend I need some text to stand here but I don't know what to write so I write and write until I have enought word standing here.\nI hope these are enough.");
-        Time.sleep(2 * 1000);
-        box.writeText(TextBox.TEXT_SPEED_FASTEST);
-        
+        box.setText("d d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d d");
+        //box.setText("Test if it works");
+        //box.writeText(TextBox.TEXT_SPEED_FASTEST);
+        System.out.println(box.writeTextWithAnswer(TextBox.TEXT_SPEED_INSTANT, new String[]{"Ja","Nein"}));
         
         
         
