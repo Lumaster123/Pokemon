@@ -26,6 +26,9 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
     private String visibleBoxItem1;
     private String visibleBoxItem2;
     private String visibleBoxItem3;
+    private int visibleBoxItemIndex1;
+    private int visibleBoxItemIndex2;
+    private int visibleBoxItemIndex3;
     private int selectedItem;
     
     private boolean displayForwardSymbol;
@@ -43,6 +46,7 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
     public static int TEXT_SPEED_INSTANT = 10000;
 
     private BufferedImage img;
+    private BufferedImage selectBoxImg;
 
     public TextBox(Dimension panelSize) {
         super(Renderer.Layer.LAYER_5, 0, panelSize.height - panelSize.height / 5, panelSize.width - 10, panelSize.height / 5 - 10);
@@ -56,6 +60,9 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
         visibleBoxItem1 = "";
         visibleBoxItem2 = "";
         visibleBoxItem3 = "";
+        visibleBoxItemIndex1 = 0;
+        visibleBoxItemIndex2 = 1;
+        visibleBoxItemIndex3 = 2;
         selectedItem = 0;
         displayForwardSymbol = false;
         displaySelectBox = false;
@@ -63,6 +70,7 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
         needUpdate = true;
 
         img = new BufferedImage((int) win_size.width - 10, (int) win_size.height / 5 - 10, BufferedImage.TYPE_INT_ARGB);
+        selectBoxImg = new BufferedImage(190, (int) win_size.height / 5 - 10 - 30, BufferedImage.TYPE_INT_ARGB);
     }
 
     /**
@@ -93,7 +101,7 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
     private String[] splitRow(String s){
         Graphics2D g = (Graphics2D)img.getGraphics();
         ArrayList<String> newRows = new ArrayList<>();
-        if(g.getFontMetrics(font).stringWidth(s) > width - 240){
+        if(g.getFontMetrics(font).stringWidth(s) > width - 80){
             String[] words = s.split(" ");
             int rowStart = 0;
             String row = ""; 
@@ -102,7 +110,7 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
                 for(int i = 0; i < words.length; i++){
                     row += words[count]+" ";
                     count++;
-                    if(!(g.getFontMetrics(font).stringWidth(row) < width - 240)){
+                    if(!(g.getFontMetrics(font).stringWidth(row) < width - 80)){
                         newRows.add(row);
                         rowStart = i+1;
                         count = rowStart;
@@ -229,6 +237,13 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
     }
 
     public void update() {
+        updateTextBox();
+        updateSelectBox();
+                
+        needUpdate = false;
+    }
+
+    private void updateTextBox(){
         Graphics2D g = (Graphics2D) img.createGraphics();
 
         g.setColor(new Color(130, 130, 130));
@@ -258,14 +273,18 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
             int[] yPoints = {pos.y+(-1*mult), pos.y+(-1*mult), pos.y+(1*mult)};
             g.fillPolygon(xPoints, yPoints, 3);
         }
+    }
+    
+    private void updateSelectBox(){
+        Graphics2D g = selectBoxImg.createGraphics();
         
         if(displaySelectBox){
             // 1. border, 2. scrollbalken, 3. di 3 items, 4. highlight selected item
-            
+            int width = 180, height = (int)this.height - 30;
             g.setColor(Color.blue);
-            g.fillRect((int)width - 225 + 40, 15, 225 - 60, (int)height - 30);
+            g.fillRect(0, 0, width, height);
             g.setColor(Color.white);
-            g.fillRect((int)width - 220 + 40, 20, 225 - 70, (int)height - 40);
+            g.fillRect(3, 3, width -6, height -6);
             
             Color itemBorderColor = Color.gray;
             Color itemBackColor = Color.white;
@@ -275,49 +294,144 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
             
             if(selectBoxItems.length == 1){
                 g.setColor(itemBorderColor);
-                g.fillRect((int)width - 220 + 40, 20, 225 - 70, (int)height - 40);
-                g.setColor(new Color(210, 210, 210));
-                g.fillRect((int)width - 220 + 42, 22, 225 - 74, (int)height - 44);
-                g.setColor(Color.magenta);
+                g.fillRect(4, 4, width - 8, height - 8);
+                g.setColor(selectedBackColor);
+                g.fillRect(6, 6, width - 12, height - 12);
+                g.setColor(selectedFontColor);
                 g.setFont(font);
-                g.drawString(visibleBoxItem1, ((int)width - 220 + 42) + (225 - 74)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem1))/2, 22 + ((int)height - 44)/2 + (28)/2);
+                g.drawString(visibleBoxItem1, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem1))/2, (7) + (height - 14)/2 + (28)/2);
             }else if(selectBoxItems.length == 2){
                 g.setColor(itemBorderColor);
-                g.fillRect((int)width - 220 + 40, 20, (225 - 70), ((int)height - 39));
+                g.fillRect(4, 4, width - 8, height - 8);
                 
                 if(selectedItem == 0)
                     g.setColor(selectedBackColor);
                 else
                     g.setColor(itemBackColor);
-                g.fillRect((int)width - 220 + 42, 22, (225 - 74), ((int)height - 44) / 2);
+                g.fillRect(6, 6, (width - 12), (height - 12)/2);
                 if(selectedItem == 0)
                     g.setColor(selectedFontColor);
                 else
                     g.setColor(itemFontColor);
                 g.setFont(font);
-                g.drawString(visibleBoxItem1, ((int)width - 220 + 42) + (225 - 74)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem1))/2, 22 + (((int)height - 44)/2)/2 + (28)/2);
+                g.drawString(visibleBoxItem1, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem1))/2, (7) + (height - 14)/4 + (28)/2);
                 
                 if(selectedItem == 1)
                     g.setColor(selectedBackColor);
                 else
                     g.setColor(itemBackColor);
-                g.fillRect((int)width - 220 + 42, 22 + ((int)height - 44) / 2 + 2, (225 - 74), ((int)height - 44) / 2);
+                g.fillRect(6, 6 + (height - 12)/2 + 1, (width - 12), (height - 12)/2 - 1);
                 if(selectedItem == 1)
                     g.setColor(selectedFontColor);
                 else
                     g.setColor(itemFontColor);
                 g.setFont(font);
-                g.drawString(visibleBoxItem2, ((int)width - 220 + 42) + (225 - 74)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem2))/2, 22 + ((int)height - 44) / 2 +2 + (((int)height - 44)/2)/2 + (28)/2);
+                g.drawString(visibleBoxItem2, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem2))/2, (7 + (height - 14)/2) + (height - 14)/4 + (28)/2);
             }else if(selectBoxItems.length == 3){
+                g.setColor(itemBorderColor);
+                g.fillRect(4, 4, width - 8, height - 8);
                 
+                if(selectedItem == 0)
+                    g.setColor(selectedBackColor);
+                else
+                    g.setColor(itemBackColor);
+                g.fillRect(6, 6, (width - 12), (height - 12)/3);
+                if(selectedItem == 0)
+                    g.setColor(selectedFontColor);
+                else
+                    g.setColor(itemFontColor);
+                g.setFont(font);
+                g.drawString(visibleBoxItem1, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem1))/2, (7) + (height - 14)/6 + (28)/2);
+                
+                if(selectedItem == 1)
+                    g.setColor(selectedBackColor);
+                else
+                    g.setColor(itemBackColor);
+                g.fillRect(6, 6 + (height - 12)/3 +1, (width - 12), (height - 12)/3 - 1);
+                if(selectedItem == 1)
+                    g.setColor(selectedFontColor);
+                else
+                    g.setColor(itemFontColor);
+                g.setFont(font);
+                g.drawString(visibleBoxItem2, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem2))/2, (7 + (height - 14)/3 + 2) + (height - 14)/6 + (28)/2);
+                
+                if(selectedItem == 2)
+                    g.setColor(selectedBackColor);
+                else
+                    g.setColor(itemBackColor);
+                g.fillRect(6, 6 + (height - 12)/3*2 + 1, (width - 12), (height - 12)/3);
+                if(selectedItem == 2)
+                    g.setColor(selectedFontColor);
+                else
+                    g.setColor(itemFontColor);
+                g.setFont(font);
+                g.drawString(visibleBoxItem3, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem3))/2, (7 + (height - 14)/3*2 + 4) + (height - 14)/6 + (28)/2);
             }else{
+                g.setColor(itemBorderColor);
+                g.fillRect(4, 4, width - 8, height - 8);
                 
+                if(selectedItem < visibleBoxItemIndex1){
+                    visibleBoxItemIndex1 = selectedItem;
+                    visibleBoxItem1 = selectBoxItems[selectedItem];
+                    visibleBoxItemIndex2 = selectedItem+1;
+                    visibleBoxItem2 = selectBoxItems[selectedItem+1];
+                    visibleBoxItemIndex3 = selectedItem+2;
+                    visibleBoxItem3 = selectBoxItems[selectedItem+2];
+                }else if(selectedItem > visibleBoxItemIndex3){
+                    visibleBoxItemIndex1 = selectedItem-2;
+                    visibleBoxItem1 = selectBoxItems[selectedItem-2];
+                    visibleBoxItemIndex2 = selectedItem-1;
+                    visibleBoxItem2 = selectBoxItems[selectedItem-1];
+                    visibleBoxItemIndex3 = selectedItem;
+                    visibleBoxItem3 = selectBoxItems[selectedItem];
+                }
+                
+                g.setColor(Color.blue);
+                g.fillRect(180, 0, 10, height);
+                g.setColor(Color.gray);
+                g.drawRect(178, 2, 10, height - 4);
+                g.setColor(Color.white);
+                g.fillRect(180, 4 + (height-8) / selectBoxItems.length * visibleBoxItemIndex1, 6, (height-8) / selectBoxItems.length * 3);
+                
+                if(selectedItem == visibleBoxItemIndex1)
+                    g.setColor(selectedBackColor);
+                else
+                    g.setColor(itemBackColor);
+                g.fillRect(6, 6, (width - 12), (height - 12)/3);
+                if(selectedItem == visibleBoxItemIndex1)
+                    g.setColor(selectedFontColor);
+                else
+                    g.setColor(itemFontColor);
+                g.setFont(font);
+                g.drawString(visibleBoxItem1, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem1))/2, (7) + (height - 14)/6 + (28)/2);
+                
+                if(selectedItem == visibleBoxItemIndex2)
+                    g.setColor(selectedBackColor);
+                else
+                    g.setColor(itemBackColor);
+                g.fillRect(6, 6 + (height - 12)/3 +1, (width - 12), (height - 12)/3 - 1);
+                if(selectedItem == visibleBoxItemIndex2)
+                    g.setColor(selectedFontColor);
+                else
+                    g.setColor(itemFontColor);
+                g.setFont(font);
+                g.drawString(visibleBoxItem2, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem2))/2, (7 + (height - 14)/3 + 2) + (height - 14)/6 + (28)/2);
+                
+                if(selectedItem == visibleBoxItemIndex3)
+                    g.setColor(selectedBackColor);
+                else
+                    g.setColor(itemBackColor);
+                g.fillRect(6, 6 + (height - 12)/3*2 + 1, (width - 12), (height - 12)/3);
+                if(selectedItem == visibleBoxItemIndex3)
+                    g.setColor(selectedFontColor);
+                else
+                    g.setColor(itemFontColor);
+                g.setFont(font);
+                g.drawString(visibleBoxItem3, (7) + (width - 14)/2 - (g.getFontMetrics(font).stringWidth(visibleBoxItem3))/2, (7 + (height - 14)/3*2 + 4) + (height - 14)/6 + (28)/2);
             }
         }
-        
-        needUpdate = false;
     }
-
+    
     @Override
     public void draw(Graphics2D g, float x, float y) {
         if (needUpdate) {
@@ -325,6 +439,9 @@ public class TextBox extends RenderableObject implements KeyChangedListener {
         }
         if (img != null) {
             g.drawImage(img, (int) this.x + 5, (int) this.y + 5, null);
+        }
+        if (displaySelectBox && selectBoxImg != null){
+            g.drawImage(selectBoxImg, (int) this.width - 200, (int) this.y - (int) this.height + 30, null);
         }
     }
 
