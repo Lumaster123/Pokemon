@@ -6,6 +6,8 @@ import engine.components.Config;
 import engine.components.Keyboard;
 import engine.rendering.Renderer;
 import engine.window.Window;
+import pokemon.pokemon.BasePokemon;
+import pokemon.pokemon.ExpType;
 import pokemon.visualisation.text.TextBox;
 
 public class Pokemon {
@@ -31,6 +33,13 @@ public class Pokemon {
         Renderer.getRenderList().add(box);
         
         box.update();
+        
+        BasePokemon bi = new BasePokemon();
+        bi.setLevel(100);
+        bi.setExpType(ExpType.FLUCTUATING);
+        bi.leveling();
+        
+        System.out.println(" help " + bi.getExpNeeded());
         
         box.setText("d d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d d");
         //box.setText("Test if it works");
