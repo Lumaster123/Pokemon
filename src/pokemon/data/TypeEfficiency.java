@@ -15,13 +15,8 @@ public class TypeEfficiency {
     public static float getDamageMultiplier(BaseAttackMove attack, BasePokemon defender) {
         int count = 0;
 
-//        System.out.println("weak " + weak.get(attack.getElementType()).size());
-//        System.out.println("strong " + strong.get(attack.getElementType()).size());
-//        System.out.println("no effekt " + no_effekt.get(attack.getElementType()).size());
-
         if (no_effekt.get(attack.getElementType()) != null) {
             for (ElementType defendType : no_effekt.get(attack.getElementType())) {
-                System.out.println("NO " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     return 0;
                 }
@@ -33,7 +28,6 @@ public class TypeEfficiency {
 
         if (strong.get(attack.getElementType()) != null) {
             for (ElementType defendType : strong.get(attack.getElementType())) {
-                System.out.println("STRONG " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     count++;
                 }
@@ -45,7 +39,6 @@ public class TypeEfficiency {
 
         if (weak.get(attack.getElementType()) != null) {
             for (ElementType defendType : weak.get(attack.getElementType())) {
-                System.out.println("WEAK " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     count--;
                 }
@@ -73,15 +66,16 @@ public class TypeEfficiency {
     }
 
     public static void fillEfficiencyList() {
-        ArrayList<ElementType> list = new ArrayList<>();
+        for(ElementType type : ElementType.values()){
+            no_effekt.put(type, new ArrayList<>());
+            weak.put(type, new ArrayList<>());
+            strong.put(type, new ArrayList<>());
+        }
 
         //Normal
-        list.clear();
-        weak.put(ElementType.NORMAL, list);
         weak.get(ElementType.NORMAL).add(ElementType.ROCK);
         weak.get(ElementType.NORMAL).add(ElementType.STEEL);
         
-        no_effekt.put(ElementType.NORMAL, list);
         no_effekt.get(ElementType.NORMAL).add(ElementType.GHOST);
 
         //Normal End
@@ -108,12 +102,10 @@ public class TypeEfficiency {
 //        //Fight End
 
         //Flying
-        strong.put(ElementType.FLYING, list);
         strong.get(ElementType.FLYING).add(ElementType.FIGHT);
         strong.get(ElementType.FLYING).add(ElementType.BUG);
         strong.get(ElementType.FLYING).add(ElementType.GRASS);
 
-        weak.put(ElementType.FLYING, list);
         weak.get(ElementType.FLYING).add(ElementType.STEEL);
         weak.get(ElementType.FLYING).add(ElementType.ELECTRO);
         weak.get(ElementType.FLYING).add(ElementType.ROCK);
