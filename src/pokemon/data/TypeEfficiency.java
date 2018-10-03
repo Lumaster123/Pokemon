@@ -14,7 +14,8 @@ public class TypeEfficiency {
 
     public static float getDamageMultiplier(BaseAttackMove attack, BasePokemon defender) {
         int count = 0;
-        
+        if(no_effekt.get(attack.getElementType()) == null)
+            System.out.println("null");
         for (ElementType defendType : no_effekt.get(attack.getElementType())) {
             if (defendType == defender.getElementType(0)) {
                 return 0;
@@ -64,14 +65,13 @@ public class TypeEfficiency {
         ArrayList<ElementType> list = new ArrayList<>();
 
         //Normal
-        list.add(ElementType.ROCK);
-        list.add(ElementType.STEEL);
         weak.put(ElementType.NORMAL, list);
-        list.clear();
+        weak.get(ElementType.NORMAL).add(ElementType.ROCK);
+        weak.get(ElementType.NORMAL).add(ElementType.STEEL);
 
-        list.add(ElementType.GHOST);
         no_effekt.put(ElementType.NORMAL, list);
-        list.clear();
+        no_effekt.get(ElementType.NORMAL).add(ElementType.GHOST);
+        
         //Normal End
 
         //Fight
@@ -345,7 +345,7 @@ public class TypeEfficiency {
         list.add(ElementType.STEEL);
         list.add(ElementType.FIRE);
         weak.put(ElementType.FAIRY, list);
-        list.clear();
+//        list.clear();
         //Fairy End
     }
 

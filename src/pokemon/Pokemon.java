@@ -48,7 +48,7 @@ public class Pokemon {
         
         
         float damageMultiplier = TypeEfficiency.getDamageMultiplier(rasierblatt, test);
-        
+        System.out.println(damageMultiplier);
         
         
         box.setText("d d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d d");
