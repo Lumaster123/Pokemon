@@ -37,12 +37,12 @@ public class Pokemon {
         
         box.update();
         
-        BasePokemon test = new BasePokemon(ElementType.WATER, ElementType.BUG);
+        BasePokemon test = new BasePokemon(ElementType.FIGHT, ElementType.BUG);
         test.setLevel(100);
         test.setExpType(ExpType.FLUCTUATING);
         test.leveling();
         
-        BaseAttackMove rasierblatt = new BaseAttackMove(ElementType.GRASS);
+        BaseAttackMove rasierblatt = new BaseAttackMove(ElementType.NORMAL);
         
         System.out.println(" help " + test.getExpNeeded());
         
@@ -52,8 +52,8 @@ public class Pokemon {
         
         
         box.setText("d d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d d");
-        //box.setText("Test if it works");
-        //box.writeText(TextBox.TEXT_SPEED_FASTEST);
+//        box.setText("Test if it works");
+//        box.writeText(TextBox.TEXT_SPEED_FASTEST);
         System.out.println(box.writeTextWithAnswer(TextBox.TEXT_SPEED_INSTANT, new String[]{"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"}));
         
         
