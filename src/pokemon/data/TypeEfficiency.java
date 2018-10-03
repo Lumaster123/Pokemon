@@ -17,6 +17,7 @@ public class TypeEfficiency {
 
         if (no_effekt.get(attack.getElementType()) != null) {
             for (ElementType defendType : no_effekt.get(attack.getElementType())) {
+                System.out.println("NO " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     return 0;
                 }
@@ -28,6 +29,7 @@ public class TypeEfficiency {
 
         if (strong.get(attack.getElementType()) != null) {
             for (ElementType defendType : strong.get(attack.getElementType())) {
+                System.out.println("STRONG " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     count++;
                 }
@@ -39,6 +41,7 @@ public class TypeEfficiency {
 
         if (weak.get(attack.getElementType()) != null) {
             for (ElementType defendType : weak.get(attack.getElementType())) {
+                System.out.println("WEAK " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     count--;
                 }
@@ -79,27 +82,21 @@ public class TypeEfficiency {
         no_effekt.get(ElementType.NORMAL).add(ElementType.GHOST);
 
         //Normal End
-//        //Fight
-//        list.add(ElementType.NORMAL);
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.ICE);
-//        list.add(ElementType.DARK);
-//        strong.put(ElementType.FIGHT, list);
-//        list.clear();
-//
-//        list.add(ElementType.FLYING);
-//        list.add(ElementType.POISON);
-//        list.add(ElementType.BUG);
-//        list.add(ElementType.PSYCHIC);
-//        list.add(ElementType.FAIRY);
-//        weak.put(ElementType.FIGHT, list);
-//        list.clear();
-//
-//        list.add(ElementType.GHOST);
-//        no_effekt.put(ElementType.FIGHT, list);
-//        list.clear();
-//        //Fight End
+        //Fight
+        strong.get(ElementType.FIGHT).add(ElementType.NORMAL);
+        strong.get(ElementType.FIGHT).add(ElementType.ROCK);
+        strong.get(ElementType.FIGHT).add(ElementType.STEEL);
+        strong.get(ElementType.FIGHT).add(ElementType.ICE);
+        strong.get(ElementType.FIGHT).add(ElementType.DARK);
+
+        weak.get(ElementType.FIGHT).add(ElementType.FLYING);
+        weak.get(ElementType.FIGHT).add(ElementType.POISON);
+        weak.get(ElementType.FIGHT).add(ElementType.BUG);
+        weak.get(ElementType.FIGHT).add(ElementType.PSYCHIC);
+        weak.get(ElementType.FIGHT).add(ElementType.FAIRY);
+
+        no_effekt.get(ElementType.FIGHT).add(ElementType.GHOST);
+        //Fight End
 
         //Flying
         strong.get(ElementType.FLYING).add(ElementType.FIGHT);
@@ -111,23 +108,17 @@ public class TypeEfficiency {
         weak.get(ElementType.FLYING).add(ElementType.ROCK);
         //Flying End
 
-//        //Poison
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.FAIRY);
-//        strong.put(ElementType.POISON, list);
-//        list.clear();
-//
-//        list.add(ElementType.POISON);
-//        list.add(ElementType.GROUND);
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.GHOST);
-//        weak.put(ElementType.POISON, list);
-//        list.clear();
+        //Poison
+        strong.get(ElementType.POISON).add(ElementType.GRASS);
+        strong.get(ElementType.POISON).add(ElementType.FAIRY);
 
-//        list.add(ElementType.STEEL);
-//        no_effekt.put(ElementType.POISON, list);
-//        list.clear();
-//        //Poison End
+        weak.get(ElementType.POISON).add(ElementType.POISON);
+        weak.get(ElementType.POISON).add(ElementType.GROUND);
+        weak.get(ElementType.POISON).add(ElementType.ROCK);
+        weak.get(ElementType.POISON).add(ElementType.GHOST);
+
+        no_effekt.get(ElementType.POISON).add(ElementType.STEEL);
+        //Poison End
 //
 //        //Ground
 //        list.add(ElementType.POISON);

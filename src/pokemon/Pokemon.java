@@ -42,7 +42,7 @@ public class Pokemon {
         test.setExpType(ExpType.FLUCTUATING);
         test.leveling();
         
-        BaseAttackMove rasierblatt = new BaseAttackMove(ElementType.NORMAL);
+        BaseAttackMove rasierblatt = new BaseAttackMove(ElementType.FLYING);
         
         System.out.println(" help " + test.getExpNeeded());
         
