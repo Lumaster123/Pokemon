@@ -6,7 +6,10 @@ import engine.components.Config;
 import engine.components.Keyboard;
 import engine.rendering.Renderer;
 import engine.window.Window;
+import pokemon.AttackMoves.BaseAttackMove;
+import pokemon.data.TypeEfficiency;
 import pokemon.pokemon.BasePokemon;
+import pokemon.pokemon.ElementType;
 import pokemon.pokemon.ExpType;
 import pokemon.visualisation.text.TextBox;
 
@@ -34,12 +37,19 @@ public class Pokemon {
         
         box.update();
         
-        BasePokemon bi = new BasePokemon();
-        bi.setLevel(100);
-        bi.setExpType(ExpType.FLUCTUATING);
-        bi.leveling();
+        BasePokemon test = new BasePokemon(ElementType.WATER, ElementType.BUG);
+        test.setLevel(100);
+        test.setExpType(ExpType.FLUCTUATING);
+        test.leveling();
         
-        System.out.println(" help " + bi.getExpNeeded());
+        BaseAttackMove rasierblatt = new BaseAttackMove(ElementType.GRASS);
+        
+        System.out.println(" help " + test.getExpNeeded());
+        
+        
+        float damageMultiplier = TypeEfficiency.getDamageMultiplier(rasierblatt, test);
+        
+        
         
         box.setText("d d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d d");
         //box.setText("Test if it works");

@@ -14,7 +14,7 @@ public class TypeEfficiency {
 
     public static float getDamageMultiplier(BaseAttackMove attack, BasePokemon defender) {
         int count = 0;
-
+        
         for (ElementType defendType : no_effekt.get(attack.getElementType())) {
             if (defendType == defender.getElementType(0)) {
                 return 0;
@@ -23,6 +23,7 @@ public class TypeEfficiency {
                 return 0;
             }
         }
+
 
         for (ElementType defendType : strong.get(attack.getElementType())) {
             if (defendType == defender.getElementType(0)) {

@@ -9,8 +9,8 @@ public class BaseAttackMove {
     protected int attackAP;
     
     
-    public BaseAttackMove(){
-        
+    public BaseAttackMove(ElementType elementType){
+        this.elementType = elementType;
     }
 
     public ElementType getElementType() {

@@ -25,9 +25,11 @@ public class BasePokemon {
     protected int specialDefense;
     protected int specialAtackkDMG;
 
-    public BasePokemon() {
+    public BasePokemon(ElementType typeOne, ElementType typeTwo) {
         attackMoves = new BaseAttackMove[4];
         elementTypes = new ElementType[2];
+        elementTypes[0] = typeOne;
+        elementTypes[1] = typeTwo;
     }
 
     // <editor-fold defaultstate="collapsed" desc="Healing">
