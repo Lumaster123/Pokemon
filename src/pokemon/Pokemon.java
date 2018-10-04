@@ -12,6 +12,7 @@ import pokemon.pokemon.BasePokemon;
 import pokemon.pokemon.ElementType;
 import pokemon.pokemon.ExpType;
 import pokemon.visualisation.text.TextBox;
+import pokemon.world.World;
 
 public class Pokemon {
     
@@ -27,6 +28,10 @@ public class Pokemon {
         Time.sleep(5);
         
         DataManager.initializeData();
+        
+        World world = new World(init.getWindow(), 15000, 15000, Renderer.Layer.LAYER_0);
+        world.initialize();
+        Renderer.getRenderList().add(world);
         
         init.printInitializationDuration();
         
@@ -54,7 +59,9 @@ public class Pokemon {
         box.setText("d d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d dd d d d d d d d d d d d d d d dd  d d d d d d d d");
 //        box.setText("Test if it works");
 //        box.writeText(TextBox.TEXT_SPEED_FASTEST);
-        System.out.println(box.writeTextWithAnswer(TextBox.TEXT_SPEED_INSTANT, new String[]{"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"}));
+        //System.out.println(box.writeTextWithAnswer(TextBox.TEXT_SPEED_INSTANT, new String[]{"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"}));
+        
+        
         
         
         

@@ -17,7 +17,6 @@ public class TypeEfficiency {
 
         if (no_effekt.get(attack.getElementType()) != null) {
             for (ElementType defendType : no_effekt.get(attack.getElementType())) {
-                System.out.println("NO " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     return 0;
                 }
@@ -29,7 +28,6 @@ public class TypeEfficiency {
 
         if (strong.get(attack.getElementType()) != null) {
             for (ElementType defendType : strong.get(attack.getElementType())) {
-                System.out.println("STRONG " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     count++;
                 }
@@ -41,7 +39,6 @@ public class TypeEfficiency {
 
         if (weak.get(attack.getElementType()) != null) {
             for (ElementType defendType : weak.get(attack.getElementType())) {
-                System.out.println("WEAK " + defendType);
                 if (defendType == defender.getElementType(0)) {
                     count--;
                 }
