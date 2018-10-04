@@ -120,225 +120,159 @@ public class TypeEfficiency {
         no_effekt.get(ElementType.POISON).add(ElementType.STEEL);
         //Poison End
 //
-//        //Ground
-//        list.add(ElementType.POISON);
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.ELECTRO);
-//        strong.put(ElementType.GROUND, list);
-//        list.clear();
-//
-//        list.add(ElementType.BUG);
-//        list.add(ElementType.GRASS);
-//        weak.put(ElementType.GROUND, list);
-//        list.clear();
-//
-//        list.add(ElementType.FLYING);
-//        no_effekt.put(ElementType.GROUND, list);
-//        list.clear();
-//        //Ground End
-//
-//        //Rock
-//        list.add(ElementType.FLYING);
-//        list.add(ElementType.BUG);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.ICE);
-//        strong.put(ElementType.ROCK, list);
-//        list.clear();
-//
-//        list.add(ElementType.FIGHT);
-//        list.add(ElementType.GROUND);
-//        list.add(ElementType.STEEL);
-//        weak.put(ElementType.ROCK, list);
-//        list.clear();
-//        //Rock End
-//
-//        //Bug
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.PSYCHIC);
-//        list.add(ElementType.DARK);
-//        strong.put(ElementType.BUG, list);
-//        list.clear();
-//
-//        list.add(ElementType.FIGHT);
-//        list.add(ElementType.FLYING);
-//        list.add(ElementType.POISON);
-//        list.add(ElementType.GHOST);
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.FAIRY);
-//        weak.put(ElementType.BUG, list);
-//        list.clear();
-//        //Bug End
-//
-//        //Ghost
-//        list.add(ElementType.GHOST);
-//        list.add(ElementType.ELECTRO);
-//        strong.put(ElementType.GHOST, list);
-//        list.clear();
-//
-//        list.add(ElementType.DARK);
-//        weak.put(ElementType.GHOST, list);
-//        list.clear();
-//
-//        list.add(ElementType.NORMAL);
-//        no_effekt.put(ElementType.GHOST, list);
-//        list.clear();
-//        //Ghost End
-//
-//        //Steel
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.ICE);
-//        list.add(ElementType.FAIRY);
-//        strong.put(ElementType.STEEL, list);
-//        list.clear();
-//
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.WATER);
-//        list.add(ElementType.ELECTRO);
-//        weak.put(ElementType.STEEL, list);
-//        list.clear();
-//        //Steel End
-//
-//        // Fire
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.ICE);
-//        list.add(ElementType.BUG);
-//        list.add(ElementType.STEEL);
-//        strong.put(ElementType.FIRE, list);
-//        list.clear();
-//
-//        list.add(ElementType.WATER);
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.DRAGON);
-//        weak.put(ElementType.FIRE, list);
-//        list.clear();
-//        //Fire End
-//
-//        //Water
-//        list.add(ElementType.GROUND);
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.FIRE);
-//        strong.put(ElementType.WATER, list);
-//        list.clear();
-//
-//        list.add(ElementType.WATER);
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.DRAGON);
-//        weak.put(ElementType.WATER, list);
-//        list.clear();
-//        //Water End
-//
-//        //Grass
-//        list.add(ElementType.GROUND);
-//        list.add(ElementType.ROCK);
-//        list.add(ElementType.WATER);
-//        strong.put(ElementType.GRASS, list);
-//        list.clear();
-//
-//        list.add(ElementType.FLYING);
-//        list.add(ElementType.POISON);
-//        list.add(ElementType.BUG);
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.DRAGON);
-//        weak.put(ElementType.GRASS, list);
-//        list.clear();
-//        //Grass End
-//
-//        //Electro
-//        list.add(ElementType.FLYING);
-//        list.add(ElementType.WATER);
-//        strong.put(ElementType.ELECTRO, list);
-//        list.clear();
-//
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.ELECTRO);
-//        list.add(ElementType.DRAGON);
-//        weak.put(ElementType.ELECTRO, list);
-//        list.clear();
-//
-//        list.add(ElementType.GROUND);
-//        no_effekt.put(ElementType.ELECTRO, list);
-//        list.clear();
-//        //Electro End
-//
-//        //Psychic
-//        list.add(ElementType.FIGHT);
-//        list.add(ElementType.POISON);
-//        strong.put(ElementType.PSYCHIC, list);
-//        list.clear();
-//
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.PSYCHIC);
-//        weak.put(ElementType.PSYCHIC, list);
-//        list.clear();
-//
-//        list.add(ElementType.DARK);
-//        no_effekt.put(ElementType.PSYCHIC, list);
-//        list.clear();
-//        //Psychic End
-//
-//        //Ice
-//        list.add(ElementType.FLYING);
-//        list.add(ElementType.GRASS);
-//        list.add(ElementType.GROUND);
-//        list.add(ElementType.DRAGON);
-//        strong.put(ElementType.ICE, list);
-//        list.clear();
-//
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.FIRE);
-//        list.add(ElementType.WATER);
-//        list.add(ElementType.ICE);
-//        weak.put(ElementType.ICE, list);
-//        list.clear();
-//        //Ice End
-//
-//        //Dragon
-//        list.add(ElementType.DRAGON);
-//        strong.put(ElementType.DRAGON, list);
-//        list.clear();
-//
-//        list.add(ElementType.STEEL);
-//        weak.put(ElementType.DRAGON, list);
-//        list.clear();
-//
-//        list.add(ElementType.FAIRY);
-//        no_effekt.put(ElementType.DRAGON, list);
-//        list.clear();
-//        //Dragon End
-//
-//        //Dark
-//        list.add(ElementType.GHOST);
-//        list.add(ElementType.PSYCHIC);
-//        strong.put(ElementType.DARK, list);
-//        list.clear();
-//
-//        list.add(ElementType.FIGHT);
-//        list.add(ElementType.DARK);
-//        list.add(ElementType.FAIRY);
-//        weak.put(ElementType.DARK, list);
-//        list.clear();
-//        //Dark End
-//
-//        //Fairy
-//        list.add(ElementType.FIGHT);
-//        list.add(ElementType.DRAGON);
-//        list.add(ElementType.DARK);
-//        strong.put(ElementType.FAIRY, list);
-//        list.clear();
-//
-//        list.add(ElementType.POISON);
-//        list.add(ElementType.STEEL);
-//        list.add(ElementType.FIRE);
-//        weak.put(ElementType.FAIRY, list);
-////        list.clear();
-//        //Fairy End
+        //Ground
+        strong.get(ElementType.GROUND).add(ElementType.POISON);
+        strong.get(ElementType.GROUND).add(ElementType.ROCK);
+        strong.get(ElementType.GROUND).add(ElementType.STEEL);
+        strong.get(ElementType.GROUND).add(ElementType.FIRE);
+        strong.get(ElementType.GROUND).add(ElementType.ELECTRO);
+
+        weak.get(ElementType.GROUND).add(ElementType.BUG);
+        weak.get(ElementType.GROUND).add(ElementType.GRASS);
+
+        no_effekt.get(ElementType.GROUND).add(ElementType.FLYING);
+        //Ground End
+
+        //Rock
+        strong.get(ElementType.ROCK).add(ElementType.FLYING);
+        strong.get(ElementType.ROCK).add(ElementType.BUG);
+        strong.get(ElementType.ROCK).add(ElementType.FIRE);
+        strong.get(ElementType.ROCK).add(ElementType.ICE);
+
+        weak.get(ElementType.ROCK).add(ElementType.FIGHT);
+        weak.get(ElementType.ROCK).add(ElementType.GROUND);
+        weak.get(ElementType.ROCK).add(ElementType.STEEL);
+        //Rock End
+
+        //Bug
+        strong.get(ElementType.BUG).add(ElementType.GRASS);
+        strong.get(ElementType.BUG).add(ElementType.PSYCHIC);
+        strong.get(ElementType.BUG).add(ElementType.DARK);
+
+        weak.get(ElementType.BUG).add(ElementType.FIGHT);
+        weak.get(ElementType.BUG).add(ElementType.FLYING);
+        weak.get(ElementType.BUG).add(ElementType.POISON);
+        weak.get(ElementType.BUG).add(ElementType.GHOST);
+        weak.get(ElementType.BUG).add(ElementType.STEEL);
+        weak.get(ElementType.BUG).add(ElementType.FIRE);
+        weak.get(ElementType.BUG).add(ElementType.FAIRY);
+        //Bug End
+
+        //Ghost
+        strong.get(ElementType.GHOST).add(ElementType.GHOST);
+        strong.get(ElementType.GHOST).add(ElementType.ELECTRO);
+
+        weak.get(ElementType.GHOST).add(ElementType.DARK);
+
+        no_effekt.get(ElementType.GHOST).add(ElementType.NORMAL);
+        //Ghost End
+
+        //Steel
+        strong.get(ElementType.STEEL).add(ElementType.ROCK);
+        strong.get(ElementType.STEEL).add(ElementType.ICE);
+        strong.get(ElementType.STEEL).add(ElementType.FAIRY);
+
+        weak.get(ElementType.STEEL).add(ElementType.STEEL);
+        weak.get(ElementType.STEEL).add(ElementType.FIRE);
+        weak.get(ElementType.STEEL).add(ElementType.WATER);
+        weak.get(ElementType.STEEL).add(ElementType.ELECTRO);
+        //Steel End
+
+        // Fire
+        strong.get(ElementType.FIRE).add(ElementType.GRASS);
+        strong.get(ElementType.FIRE).add(ElementType.ICE);
+        strong.get(ElementType.FIRE).add(ElementType.BUG);
+        strong.get(ElementType.FIRE).add(ElementType.STEEL);
+
+        weak.get(ElementType.FIRE).add(ElementType.WATER);
+        weak.get(ElementType.FIRE).add(ElementType.ROCK);
+        weak.get(ElementType.FIRE).add(ElementType.FIRE);
+        weak.get(ElementType.FIRE).add(ElementType.DRAGON);
+        //Fire End
+
+        //Water
+        strong.get(ElementType.WATER).add(ElementType.GROUND);
+        strong.get(ElementType.WATER).add(ElementType.ROCK);
+        strong.get(ElementType.WATER).add(ElementType.FIRE);
+
+        weak.get(ElementType.WATER).add(ElementType.WATER);
+        weak.get(ElementType.WATER).add(ElementType.GRASS);
+        weak.get(ElementType.WATER).add(ElementType.DRAGON);
+        //Water End
+
+        //Grass
+        strong.get(ElementType.GRASS).add(ElementType.GROUND);
+        strong.get(ElementType.GRASS).add(ElementType.ROCK);
+        strong.get(ElementType.GRASS).add(ElementType.WATER);
+
+        weak.get(ElementType.GRASS).add(ElementType.FLYING);
+        weak.get(ElementType.GRASS).add(ElementType.POISON);
+        weak.get(ElementType.GRASS).add(ElementType.BUG);
+        weak.get(ElementType.GRASS).add(ElementType.STEEL);
+        weak.get(ElementType.GRASS).add(ElementType.FIRE);
+        weak.get(ElementType.GRASS).add(ElementType.GRASS);
+        weak.get(ElementType.GRASS).add(ElementType.DRAGON);
+        //Grass End
+
+        //Electro
+        strong.get(ElementType.ELECTRO).add(ElementType.FLYING);
+        strong.get(ElementType.ELECTRO).add(ElementType.WATER);
+
+        weak.get(ElementType.ELECTRO).add(ElementType.GRASS);
+        weak.get(ElementType.ELECTRO).add(ElementType.ELECTRO);
+        weak.get(ElementType.ELECTRO).add(ElementType.DRAGON);
+
+        no_effekt.get(ElementType.ELECTRO).add(ElementType.GROUND);
+        //Electro End
+
+        //Psychic
+        strong.get(ElementType.PSYCHIC).add(ElementType.FIGHT);
+        strong.get(ElementType.PSYCHIC).add(ElementType.POISON);
+
+        weak.get(ElementType.PSYCHIC).add(ElementType.STEEL);
+        weak.get(ElementType.PSYCHIC).add(ElementType.PSYCHIC);
+
+        no_effekt.get(ElementType.PSYCHIC).add(ElementType.DARK);
+        //Psychic End
+
+        //Ice
+        strong.get(ElementType.ICE).add(ElementType.FLYING);
+        strong.get(ElementType.ICE).add(ElementType.GRASS);
+        strong.get(ElementType.ICE).add(ElementType.GROUND);
+        strong.get(ElementType.ICE).add(ElementType.DRAGON);
+
+        weak.get(ElementType.ICE).add(ElementType.STEEL);
+        weak.get(ElementType.ICE).add(ElementType.FIRE);
+        weak.get(ElementType.ICE).add(ElementType.WATER);
+        weak.get(ElementType.ICE).add(ElementType.ICE);
+        //Ice End
+
+        //Dragon
+        strong.get(ElementType.DRAGON).add(ElementType.DRAGON);
+
+        weak.get(ElementType.DRAGON).add(ElementType.STEEL);
+
+        no_effekt.get(ElementType.DRAGON).add(ElementType.FAIRY);
+        //Dragon End
+
+        //Dark
+        strong.get(ElementType.DARK).add(ElementType.GHOST);
+        strong.get(ElementType.DARK).add(ElementType.PSYCHIC);
+
+        weak.get(ElementType.DARK).add(ElementType.FIGHT);
+        weak.get(ElementType.DARK).add(ElementType.DARK);
+        weak.get(ElementType.DARK).add(ElementType.FAIRY);
+        //Dark End
+
+        //Fairy
+        strong.get(ElementType.FAIRY).add(ElementType.FIGHT);
+        strong.get(ElementType.FAIRY).add(ElementType.DRAGON);
+        strong.get(ElementType.FAIRY).add(ElementType.DARK);
+
+        weak.get(ElementType.FAIRY).add(ElementType.POISON);
+        weak.get(ElementType.FAIRY).add(ElementType.STEEL);
+        weak.get(ElementType.FAIRY).add(ElementType.FIRE);
+        //Fairy End
     }
 
 }
