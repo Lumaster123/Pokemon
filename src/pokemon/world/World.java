@@ -19,8 +19,8 @@ public class World extends engine.components.world.World{
 
     public void initialize(){
         
-        for(int i = 0; i < 200; i++){
-            for(int j = 0; j < 200; j++){
+        for(int i = 0; i < 300; i++){
+            for(int j = 0; j < 300; j++){
                 tiles.add(new Tile(layer, i*gridX, j*gridY, gridX, gridY, "pokemon/resources/images/world/grass.png"));
             }
         }

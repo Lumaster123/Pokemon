@@ -2,12 +2,14 @@ package pokemon;
 
 import engine.Initializer;
 import engine.Time;
+import engine.components.Camera;
 import engine.components.Config;
 import engine.components.Keyboard;
 import engine.rendering.Renderer;
 import engine.window.Window;
 import pokemon.AttackMoves.BaseAttackMove;
 import pokemon.data.TypeEfficiency;
+import pokemon.entity.player.Player;
 import pokemon.pokemon.BasePokemon;
 import pokemon.pokemon.ElementType;
 import pokemon.pokemon.ExpType;
@@ -19,10 +21,11 @@ public class Pokemon {
     public static void main(String[] args){
         
         Initializer init = new Initializer();
-        Config.FPS_CURRENT_SETTING = Config.FPS_60;
+        Config.FPS_CURRENT_SETTING = Config.FPS_INFINITY;
         init.initializeWindow(new Window(Window.Window_Size.FULL_SIZE, "Pokemon", "pokemon/resources/images/icon/ultraball.png"));
         init.initializeConsole();
         init.initializeRenderer();
+        init.initializePhysicSystem();
         Keyboard keyboard = new Keyboard();
         init.initializeKeyboard(keyboard);
         Time.sleep(5);
@@ -61,7 +64,12 @@ public class Pokemon {
 //        box.writeText(TextBox.TEXT_SPEED_FASTEST);
         //System.out.println(box.writeTextWithAnswer(TextBox.TEXT_SPEED_INSTANT, new String[]{"0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"}));
         
+        Player player = new Player(world, 0, 0, 25, 25, Renderer.Layer.LAYER_3, init.getKeyboard());
+        Renderer.getRenderList().add(player);
         
+        Camera cam = new Camera(init.getWindow(), 0, 0);
+        Renderer.setCamera(cam);
+        cam.focusEntity(player, 50, 50, 50, 50);
         
         
         
